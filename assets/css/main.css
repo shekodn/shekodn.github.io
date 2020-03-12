@@ -16,6 +16,18 @@
 /*
   Base
 */
+/*
+ Captions for images
+*/
+em {
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
 
 body {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
@@ -58,6 +70,9 @@ a:hover {
 }
 
 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 100%;
   height: auto;
   border-radius: 5px;
