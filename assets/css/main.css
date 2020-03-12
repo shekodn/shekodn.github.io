@@ -16,19 +16,6 @@
 /*
   Base
 */
-/*
- Captions for images
-*/
-em {
-    font-style: italic;
-    font-weight: 600;
-    margin-bottom: 20px;
-    margin-top: 8px;
-    display: block;
-    text-align: center;
-    font-size: 14px;
-}
-
 body {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
   font-size: 18px;
@@ -519,4 +506,15 @@ th, td {
 
 .fa-rss-square:hover {
 	color: #ff6600;
+}
+
+/*
+ Captions for images
+*/
+
+small {
+  font-style: italic;
+  display: block;
+  text-align: center;
+  font-size: 14px;
 }
