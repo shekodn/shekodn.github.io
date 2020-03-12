@@ -66,3 +66,5 @@ What’s next
 My journey at N26 has been an amazing: I feel that I’ve been challenged and empowered on a regular basis. After only 3 months, I have already learned a lot, but every day, it feels like there is a whole universe to be discovered. Luckily, I know that I will not be alone on this journey since I’ll be able to rely on the people (and dogs, of course!) that surround me.
 
 Finally, If you’d like to join us on the journey of building the mobile bank the world loves to use, have a look at some of the roles [we’re looking for here.](https://n26.com/en/careers?gh_src=3824fb5e1&utm_source=magazine&utm_medium=article&utm_content=what-it-was-like-to-join-n26)
+
+_Also published on [Medium](https://medium.com/insiden26/what-it-was-like-to-join-n26-abad7b072e25)._
