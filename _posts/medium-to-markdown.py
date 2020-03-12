@@ -101,6 +101,7 @@ if __name__ == "__main__":
             replacement = f"![]({caption[0]})\n*{caption[1]}*\n\n"
             new_content = new_content.replace(original, replacement)
 
+        footer = f"_Also published on [Medium]({post_url})._"
         new_content = (
             f"""---
 published: true
@@ -111,7 +112,7 @@ tags: []
 image:
 ---
 """
-            + new_content
+            + new_content + "\n" + footer
         )
         # Save the modified post
         with open(post_file_name, "w") as fout:
