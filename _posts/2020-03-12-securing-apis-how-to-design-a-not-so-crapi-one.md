@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "Securing APIs: How to Design a Not So crAPI One"
-author: "Sergio Diaz"
 categories: blog
 tags: [tech, security, apis]
-image:
 ---
 
 In this post we discuss about some components that every API should have in order to not build a [**C**ompletely **R**idiculous **API**](https://owasp.org/www-project-api-security/) **(**A.k.a crAPI).
