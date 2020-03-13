@@ -512,7 +512,11 @@ th, td {
  Captions for images
 */
 
-small {
+small .masthead-subtitle {
+  font-size: smaller;
+}
+
+.img-caption {
   font-style: italic;
   display: block;
   text-align: center;

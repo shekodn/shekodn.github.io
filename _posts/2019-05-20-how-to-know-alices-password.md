@@ -9,9 +9,9 @@ image:
 
 <img class="s t u ft ai" src="https://miro.medium.com/max/11196/0*tBDMUSYMhZfl5uki" width="5598" height="3657" role="presentation"/>
 
-<small>
+<small class="img-caption">
 Photo by [CMDR Shane](https://unsplash.com/@cmdrshane?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
-<small>
+</small>
 
 Couple of days ago Alice, a friend of mine, called me and showed me the following email that she received earlier that morning.
 
@@ -21,9 +21,9 @@ TL;DR for Alice’s received email
 “Hi Alice! I have your password, so I was able to get access to all your contacts. If you don’t pay me, I’ll send them a video I took of you while visiting a porn website.”
 
 <img class="s t u ft ai" src="https://miro.medium.com/max/4412/1*rU4_hLoDsN-7uUL0bW2ZjA.png" width="2206" height="846" role="presentation"/>
-<small>
+<small class="img-caption">
 Actual phishing email sent to Alice
-<small>
+<small class="img-caption">
 
 
 Alice confessed to me that she was only worried by the fact that _ALICE_PASSWORD_ was in fact her real password. She didn’t understand how it was possible so I showed her what happened.
@@ -39,9 +39,9 @@ If it happened to Alice…can it also happen to me?
 There is a really simple way to know if your credentials are in any of those databases. [Have I been pwned](https://haveibeenpwned.com/) (HIBP) is a free resource for anyone to quickly assess if they may have been put at risk due to an online account of theirs having been compromised or “pwned” in a data breach.
 
 <img class="s t u ft ai" src="https://miro.medium.com/max/3184/1*xpNft0pfzNDDnrTHM2X9iw.png" width="1592" height="775" role="presentation"/>
-<small>
+<small class="img-caption">
 Alice has been pwned!
-<small>
+<small class="img-caption">
 
 As you can see Alice has been pwned, in other words, information such as her email and password is somewhere out there in the internet. Although this might sound like it is game over, it doesn't necessarily need to be that way. Just as HIBP suggests, you need to ensure to do the following:
 
@@ -72,9 +72,9 @@ Use [Have I been pwned](https://haveibeenpwned.com/NotifyMe) in order to receive
 
 <img class="s t u ft ai" src="https://miro.medium.com/max/1600/1*-Z4PlTwt6tqp6ZBaUjorAQ.jpeg" width="800" height="450" role="presentation"/>
 
-<small>
+<small class="img-caption">
 Detect. Protect. Respond
-<small>
+<small class="img-caption">
 
 Conclusion
 ==========
