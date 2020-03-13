@@ -30,7 +30,9 @@ These set of threats are often referred as [**STRIDE**](https://en.wikipedia.org
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/698/1*lcIFqET90HETSonh54X3AA.png" width="349" height="196" role="presentation"/>
 
+<small class="img-caption">
 crAPI diagram
+</small>
 
 Although the current state of it is vulnerable to **all** of the STRIDE threats, at the end of this post the application will be more difficult to compromise just by adding some security layers.
 
@@ -39,7 +41,9 @@ The Authenticator Layer
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/960/1*w3nt2dTvWQVAdcTmgDACUA.gif" width="480" height="270" role="presentation"/>
 
+<small class="img-caption">
 Let me in! Please?
+</small>
 
 Imagine that you receive an invitation to a wedding. When you arrive to the event, you go to the entrance and show your invitation and you use your name to get it. Then, you go inside and you have a seat, a 3-course meal, and you can ask the waiter for drinks. Once inside no one will ask for your an invitation, because that already happened at the entrance and you are going to be treated as an invited guest.
 
@@ -49,9 +53,9 @@ Just as you don’t want uninvited people in a wedding that it is supposed to be
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/1136/1*w40CcZ4QYIQOq7a5cm2Ndw.png" width="568" height="145" role="presentation"/>
 
-<em>Emphasized text</em>
-
+<small class="img-caption">
 Adding The Authenticator Layer
+</small>
 
 In order to do so, the authenticator needs to be able to ensure that users and clients are who they say they are. This process involves at least one of the following three things:
 
@@ -66,13 +70,17 @@ The Access Controller Layer
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/800/1*unoiOPhjl04Qm7zPhm2EDg.gif" width="400" height="194" role="presentation"/>
 
+<small class="img-caption">
 You shall not pass!
+</small>
 
 Now that you have the authenticator in place, let’s go back to the previous wedding example: After being enjoying the event for a while, you go to the toilet and you pass by the bar. Then you see a really fancy wine bottle. You ask the waiter for one glass, but she politely tells you that the bottle is only meant for the family of the bride. In other words, _not because you are already inside means that you can do anything you want_. As a result, you need to add a second component: The Access Controller.
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/1540/1*15Qnm7zjRhi9Z06La9LFXA.png" width="770" height="145" role="presentation"/>
 
+<small class="img-caption">
 Adding The Access Controller Layer
+</small>
 
 This component will allow you to identify, not **who**, but **which** permissions or claims the user that is making the request has (Remember: authentication !=authorization).
 
@@ -85,13 +93,17 @@ The Rate Limiter Layer
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/960/1*xm5TcoJyR5lQt8dqQ9wLRA.gif" width="480" height="358" role="presentation"/>
 
+<small class="img-caption">
 The _rate_ limit here is 12.
+</small>
 
 For every piece of software out there (even if it is in the cloud), there is a physical server plugged somewhere. This server has limitations such as memory and CPU. As a result, you want to make sure that no one is overusing those resources, because this would mean that it would be at the expense of other legit clients. One way to prevent this is to add a Rate Limiter Layer. As it name suggests, this component indicates how many calls your application may make per time window. Adding this layer of protection will also help to slow down brute force attacks (e.g. login endpoint) and to protect the overall availability of the system.
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/1864/1*PQ3osb68_dUSdx3eSFkhoQ.png" width="932" height="145" role="presentation"/>
 
+<small class="img-caption">
 Adding The Rate Limiter Layer
+<small>
 
 To implement this solution, you can introduce a rate limiter application middleware or you can delegate the rate limiting duties to a load balancer such as NGINX. In this case, we can use the latter to protect the Application Logic servers from being overwhelmed by too many user requests at the same time. This is done by a rate limiting algorithm (e.g. [Leaky Bucket](https://www.youtube.com/watch?v=nJGTJ5Hd6Hk)) used to check if the user session (or IP address) has to be limited based on the information in the session cache. In case a client made too many requests within a given time frame, the Rate Limiting Layer will prevent traffic interfering with the other layers that are meant to be consumed by legit users.
 
@@ -108,7 +120,9 @@ Besides, a good Audit System will allow you to create alerts that will help you 
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/2122/1*EKPg8w6TWtbjU0L0VkA-SQ.png" width="1061" height="145" role="presentation"/>
 
+<small class="img-caption">
 Adding The Logger Layer
+</small>
 
 Failing to have a good Audit System will make Forensic Evidence and Long Term Analysis really difficult, because going back to understand what happened or wanting to go through old logs (the ones that will help you comply with your retention policy)  is not going to be possible. In addition, [according to the OWASP](https://owasp.org/www-project-api-security/), most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
@@ -119,7 +133,9 @@ After adding the Authenticator, Access Controller, Rate Limiter, and the Logger,
 
 <img class="s t u gl ai" src="https://miro.medium.com/max/2122/1*yOw-FDROVVglDE9Gn9B1eA.png" width="1061" height="145" role="presentation"/>
 
+<small class="img-caption">
 Final Diagram: [https://gist.github.com/shekodn/81eeefdefc7ae810947269ad15d1bbb2](https://gist.github.com/shekodn/81eeefdefc7ae810947269ad15d1bbb2)
+</small>
 
 **Spoofing** now is less likely, because you have an authenticator in place to be able to differentiate between Alice and an unauthenticated (uninvited) user. And because you know that Alice is supposed to only read and modify her own data, **Information Disclosure** and **Tampering** are more difficult to exploit since you have an Access Controller in place. And not only that, if someones is trying to maliciously modify data, you (and the CISO) can sleep better since the Logger will be able to identify who is making the malicious call without the risk of someone denying or **repudiating** it. Last but not least, if an attacker wants to cause a **Denial of Service (DoS)** attack or brute force a specific endpoint, she will have a hard time doing so (or at least it will be more expensive $$$) since the rate limiter is up and running.
 
