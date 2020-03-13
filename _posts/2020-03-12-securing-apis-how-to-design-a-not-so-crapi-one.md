@@ -162,3 +162,5 @@ Resources
 [https://www.nginx.com/blog/rate-limiting-nginx/](https://www.nginx.com/blog/rate-limiting-nginx/)
 
 Diagrams were made using: [https://www.planttext.com/](https://www.planttext.com/)
+
+_Also published on [Medium](https://medium.com/@sergiodn/securing-apis-how-to-design-a-not-so-crapi-one-fe94b15ea821)._
