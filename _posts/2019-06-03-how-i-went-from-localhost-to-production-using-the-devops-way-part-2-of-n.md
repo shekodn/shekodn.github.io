@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "Draft How I Went From Localhost To Production Using The Devops Way Part 2 Of N"
+title: "How I Went From Localhost To Production Using The Devops Way Part 2 Of N"
 categories: blog
 tags: [tech, devsecops]
 image:
